@@ -1,0 +1,36 @@
+[2022-10-01 20:50:17,729] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: main_dag.create_fct_table manual__2022-10-01T20:49:23.320330+00:00 [queued]>
+[2022-10-01 20:50:17,753] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: main_dag.create_fct_table manual__2022-10-01T20:49:23.320330+00:00 [queued]>
+[2022-10-01 20:50:17,753] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-01 20:50:17,754] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-10-01 20:50:17,754] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-01 20:50:17,789] {taskinstance.py:1377} INFO - Executing <Task(PostgresOperator): create_fct_table> on 2022-10-01 20:49:23.320330+00:00
+[2022-10-01 20:50:17,797] {standard_task_runner.py:52} INFO - Started process 2444 to run task
+[2022-10-01 20:50:17,801] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'main_dag', 'create_fct_table', 'manual__2022-10-01T20:49:23.320330+00:00', '--job-id', '103', '--raw', '--subdir', 'DAGS_FOLDER/main_dag.py', '--cfg-path', '/tmp/tmp9qve_jdv', '--error-file', '/tmp/tmp2732zz1o']
+[2022-10-01 20:50:17,803] {standard_task_runner.py:80} INFO - Job 103: Subtask create_fct_table
+[2022-10-01 20:50:17,884] {task_command.py:369} INFO - Running <TaskInstance: main_dag.create_fct_table manual__2022-10-01T20:49:23.320330+00:00 [running]> on host cb37a969dddb
+[2022-10-01 20:50:17,977] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=main_dag
+AIRFLOW_CTX_TASK_ID=create_fct_table
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-01T20:49:23.320330+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-10-01T20:49:23.320330+00:00
+[2022-10-01 20:50:17,988] {base.py:68} INFO - Using connection ID 'postgres' for task execution.
+[2022-10-01 20:50:17,995] {dbapi.py:208} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS fct_table (
+                Market_Cap TEXT NOT NULL,
+                Last_Price TEXT NOT NULL,
+                Price–earnings_ratio TEXT NOT NULL,
+                Dividend_yield TEXT NOT NULL,
+                Return_on_equity TEXT NOT NULL,
+                Company_Key TEXT NOT NULL,
+                Stock_Key TEXT NOT NULL
+            );
+        , parameters: None
+[2022-10-01 20:50:17,996] {postgres.py:94} INFO - NOTICE:  relation "fct_table" already exists, skipping
+
+[2022-10-01 20:50:18,014] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=main_dag, task_id=create_fct_table, execution_date=20221001T204923, start_date=20221001T205017, end_date=20221001T205018
+[2022-10-01 20:50:18,055] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-10-01 20:50:18,115] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

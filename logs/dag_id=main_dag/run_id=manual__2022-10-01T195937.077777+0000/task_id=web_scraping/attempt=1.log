@@ -1,0 +1,143 @@
+[2022-10-01 19:59:41,699] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: main_dag.web_scraping manual__2022-10-01T19:59:37.077777+00:00 [queued]>
+[2022-10-01 19:59:41,715] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: main_dag.web_scraping manual__2022-10-01T19:59:37.077777+00:00 [queued]>
+[2022-10-01 19:59:41,716] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-01 19:59:41,716] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-10-01 19:59:41,716] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-01 19:59:41,739] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): web_scraping> on 2022-10-01 19:59:37.077777+00:00
+[2022-10-01 19:59:42,389] {standard_task_runner.py:52} INFO - Started process 862 to run task
+[2022-10-01 19:59:42,393] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'main_dag', 'web_scraping', 'manual__2022-10-01T19:59:37.077777+00:00', '--job-id', '72', '--raw', '--subdir', 'DAGS_FOLDER/main_dag.py', '--cfg-path', '/tmp/tmpdkju8odh', '--error-file', '/tmp/tmpcdw0oxaj']
+[2022-10-01 19:59:43,214] {standard_task_runner.py:80} INFO - Job 72: Subtask web_scraping
+[2022-10-01 19:59:44,245] {task_command.py:369} INFO - Running <TaskInstance: main_dag.web_scraping manual__2022-10-01T19:59:37.077777+00:00 [running]> on host cb37a969dddb
+[2022-10-01 19:59:44,659] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=main_dag
+AIRFLOW_CTX_TASK_ID=web_scraping
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-01T19:59:37.077777+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-10-01T19:59:37.077777+00:00
+[2022-10-01 20:00:26,195] {logging_mixin.py:115} INFO - this is df market final       0
+0  LEAP
+1  MAIN
+0  MAIN
+1  MAIN
+2   ETF
+3  MAIN
+4  MAIN
+5  MAIN
+6  LEAP
+7  MAIN
+[2022-10-01 20:00:26,199] {logging_mixin.py:115} INFO - this is shariah list (997, 2)
+[2022-10-01 20:00:26,207] {logging_mixin.py:115} INFO - this is shariah head                                        Shariah_links Shariah_final
+0  https://www.malaysiastock.biz/App_Themes/image...            No
+1  https://www.malaysiastock.biz/App_Themes/image...           Yes
+0  https://www.malaysiastock.biz/App_Themes/image...           Yes
+1  https://www.malaysiastock.biz/App_Themes/image...           Yes
+2  https://www.malaysiastock.biz/App_Themes/image...            No
+3  https://www.malaysiastock.biz/App_Themes/image...           Yes
+4  https://www.malaysiastock.biz/App_Themes/image...           Yes
+5  https://www.malaysiastock.biz/App_Themes/image...            No
+6  https://www.malaysiastock.biz/App_Themes/image...           Yes
+7  https://www.malaysiastock.biz/App_Themes/image...           Yes
+[2022-10-01 20:00:26,208] {logging_mixin.py:115} INFO - unique value of shariah is: ['']
+[2022-10-01 20:00:26,209] {logging_mixin.py:115} INFO - This is market head
+[2022-10-01 20:00:26,220] {logging_mixin.py:115} INFO -    Market_Name
+0        LEAP
+1        MAIN
+0        MAIN
+1        MAIN
+2         ETF
+3        MAIN
+4        MAIN
+5        MAIN
+6        LEAP
+7        MAIN
+[2022-10-01 20:00:26,220] {logging_mixin.py:115} INFO - (997, 11)
+[2022-10-01 20:00:26,258] {logging_mixin.py:115} INFO -                                              Company  ... Stock Short Name
+0  1TECH (03041)LEAPONETECH SOLUTIONS HOLDINGS BE...  ...            1TECH
+1              3A (0012)MAINTHREE-A RESOURCES BERHAD  ...               3A
+0                 AASIA (7054)MAINASTRAL ASIA BERHAD  ...            AASIA
+1                     AAX (5238)MAINAIRASIA X BERHAD  ...              AAX
+2     ABFMY1 (0800EA)ETFABF MALAYSIA BOND INDEX FUND  ...           ABFMY1
+3              ABLEGLOB (7167)MAINABLE GLOBAL BERHAD  ...         ABLEGLOB
+4                 ABLEGRP (7086)MAINABLEGROUP BERHAD  ...          ABLEGRP
+5       ABMB (2488)MAINALLIANCE BANK MALAYSIA BERHAD  ...             ABMB
+6        ACEINNO (03028)LEAPACE INNOVATE ASIA BERHAD  ...          ACEINNO
+7                ACME (7131)MAINACME HOLDINGS BERHAD  ...             ACME
+
+[10 rows x 11 columns]
+[2022-10-01 20:00:26,261] {logging_mixin.py:115} INFO - df temp head is:
+[2022-10-01 20:00:26,318] {logging_mixin.py:115} INFO -                                               Company  ... Shariah_final
+0  1TECH (03041)LEAPONETECH SOLUTIONS HOLDINGS BE...  ...            No
+1              3A (0012)MAINTHREE-A RESOURCES BERHAD  ...           Yes
+0                 AASIA (7054)MAINASTRAL ASIA BERHAD  ...           Yes
+1                     AAX (5238)MAINAIRASIA X BERHAD  ...           Yes
+2     ABFMY1 (0800EA)ETFABF MALAYSIA BOND INDEX FUND  ...            No
+3              ABLEGLOB (7167)MAINABLE GLOBAL BERHAD  ...           Yes
+4                 ABLEGRP (7086)MAINABLEGROUP BERHAD  ...           Yes
+5       ABMB (2488)MAINALLIANCE BANK MALAYSIA BERHAD  ...            No
+6        ACEINNO (03028)LEAPACE INNOVATE ASIA BERHAD  ...           Yes
+7                ACME (7131)MAINACME HOLDINGS BERHAD  ...           Yes
+
+[10 rows x 13 columns]
+[2022-10-01 20:00:26,320] {logging_mixin.py:115} INFO - df temp shape is:
+[2022-10-01 20:00:26,321] {logging_mixin.py:115} INFO -  (997, 13)
+[2022-10-01 20:00:26,325] {logging_mixin.py:115} INFO - df_final head is:
+[2022-10-01 20:00:26,360] {logging_mixin.py:115} INFO -                                               Company  ... Market_Name
+0  1TECH (03041)LEAPONETECH SOLUTIONS HOLDINGS BE...  ...        LEAP
+1              3A (0012)MAINTHREE-A RESOURCES BERHAD  ...        MAIN
+2                 AASIA (7054)MAINASTRAL ASIA BERHAD  ...        MAIN
+3                     AAX (5238)MAINAIRASIA X BERHAD  ...        MAIN
+4     ABFMY1 (0800EA)ETFABF MALAYSIA BOND INDEX FUND  ...         ETF
+5              ABLEGLOB (7167)MAINABLE GLOBAL BERHAD  ...        MAIN
+6                 ABLEGRP (7086)MAINABLEGROUP BERHAD  ...        MAIN
+7       ABMB (2488)MAINALLIANCE BANK MALAYSIA BERHAD  ...        MAIN
+8        ACEINNO (03028)LEAPACE INNOVATE ASIA BERHAD  ...        LEAP
+9                ACME (7131)MAINACME HOLDINGS BERHAD  ...        MAIN
+
+[10 rows x 14 columns]
+[2022-10-01 20:00:26,362] {logging_mixin.py:115} INFO - df_final shape is:
+[2022-10-01 20:00:26,364] {logging_mixin.py:115} INFO -  (997, 14)
+[2022-10-01 20:00:26,374] {logging_mixin.py:115} INFO - df_final head is:
+[2022-10-01 20:00:26,419] {logging_mixin.py:115} INFO -                         Company Full Name  ... Stock_Key
+0  LEAPONETECH SOLUTIONS HOLDINGS BERHAD  ...      8313
+1           MAINTHREE-A RESOURCES BERHAD  ...      7590
+2                 MAINASTRAL ASIA BERHAD  ...      9976
+3                   MAINAIRASIA X BERHAD  ...      5564
+4        ETFABF MALAYSIA BOND INDEX FUND  ...      8524
+5                 MAINABLE GLOBAL BERHAD  ...      9810
+6                   MAINABLEGROUP BERHAD  ...      5141
+7      MAINALLIANCE BANK MALAYSIA BERHAD  ...      2441
+8           LEAPACE INNOVATE ASIA BERHAD  ...      6602
+9               MAINACME HOLDINGS BERHAD  ...      9974
+
+[10 rows x 13 columns]
+[2022-10-01 20:00:26,420] {logging_mixin.py:115} INFO - df_final shape is:
+[2022-10-01 20:00:26,420] {logging_mixin.py:115} INFO -  (997, 13)
+[2022-10-01 20:00:26,471] {logging_mixin.py:115} INFO -   Market_Cap Last_Price  ... Company_Key Stock_Key
+0     15.01m       0.20  ...        2519      8313
+1    432.96m       0.88  ...        3843      7590
+2     66.00m       0.10  ...        3222      9976
+3    165.93m       0.40  ...        2485      5564
+4     1.604b       1.14  ...        7498      8524
+
+[5 rows x 7 columns]
+[2022-10-01 20:00:26,489] {logging_mixin.py:115} INFO -                        Company_Full_Name  ... Company_Key
+0  LEAPONETECH SOLUTIONS HOLDINGS BERHAD  ...        2519
+1           MAINTHREE-A RESOURCES BERHAD  ...        3843
+2                 MAINASTRAL ASIA BERHAD  ...        3222
+3                   MAINAIRASIA X BERHAD  ...        2485
+4        ETFABF MALAYSIA BOND INDEX FUND  ...        7498
+
+[5 rows x 4 columns]
+[2022-10-01 20:00:26,507] {logging_mixin.py:115} INFO -   Stock_Short_Name Stock_Code Market_Name  Stock_Key
+0            1TECH      03041        LEAP       8313
+1               3A       0012        MAIN       7590
+2            AASIA       7054        MAIN       9976
+3              AAX       5238        MAIN       5564
+4           ABFMY1     0800EA         ETF       8524
+[2022-10-01 20:00:26,527] {python.py:173} INFO - Done. Returned value was: None
+[2022-10-01 20:00:26,559] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=main_dag, task_id=web_scraping, execution_date=20221001T195937, start_date=20221001T195941, end_date=20221001T200026
+[2022-10-01 20:00:26,627] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-10-01 20:00:26,722] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

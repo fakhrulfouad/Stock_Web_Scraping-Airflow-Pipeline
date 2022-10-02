@@ -1,0 +1,37 @@
+[2022-10-01 16:14:21,758] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: main_dag.create_fct_table manual__2022-10-01T16:13:05.621925+00:00 [queued]>
+[2022-10-01 16:14:21,771] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: main_dag.create_fct_table manual__2022-10-01T16:13:05.621925+00:00 [queued]>
+[2022-10-01 16:14:21,772] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-01 16:14:21,772] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-10-01 16:14:21,773] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-01 16:14:21,794] {taskinstance.py:1377} INFO - Executing <Task(PostgresOperator): create_fct_table> on 2022-10-01 16:13:05.621925+00:00
+[2022-10-01 16:14:21,805] {standard_task_runner.py:52} INFO - Started process 1268 to run task
+[2022-10-01 16:14:21,810] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'main_dag', 'create_fct_table', 'manual__2022-10-01T16:13:05.621925+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/main_dag.py', '--cfg-path', '/tmp/tmp9e5cxj7e', '--error-file', '/tmp/tmpvfzkft66']
+[2022-10-01 16:14:21,811] {standard_task_runner.py:80} INFO - Job 12: Subtask create_fct_table
+[2022-10-01 16:14:21,905] {task_command.py:369} INFO - Running <TaskInstance: main_dag.create_fct_table manual__2022-10-01T16:13:05.621925+00:00 [running]> on host 400f53386831
+[2022-10-01 16:14:22,019] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=main_dag
+AIRFLOW_CTX_TASK_ID=create_fct_table
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-01T16:13:05.621925+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-10-01T16:13:05.621925+00:00
+[2022-10-01 16:14:22,033] {base.py:68} INFO - Using connection ID 'postgres' for task execution.
+[2022-10-01 16:14:22,037] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/postgres/operators/postgres.py", line 92, in execute
+    self.hook.run(self.sql, self.autocommit, parameters=self.parameters)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/hooks/dbapi.py", line 181, in run
+    with closing(self.get_conn()) as conn:
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/postgres/hooks/postgres.py", line 113, in get_conn
+    self.conn = psycopg2.connect(**conn_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "postgres" (172.24.0.3), port 5432 failed: FATAL:  password authentication failed for user "***"
+
+[2022-10-01 16:14:22,049] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=main_dag, task_id=create_fct_table, execution_date=20221001T161305, start_date=20221001T161421, end_date=20221001T161422
+[2022-10-01 16:14:22,067] {standard_task_runner.py:97} ERROR - Failed to execute job 12 for task create_fct_table (connection to server at "postgres" (172.24.0.3), port 5432 failed: FATAL:  password authentication failed for user "***"
+; 1268)
+[2022-10-01 16:14:22,106] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-10-01 16:14:22,166] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

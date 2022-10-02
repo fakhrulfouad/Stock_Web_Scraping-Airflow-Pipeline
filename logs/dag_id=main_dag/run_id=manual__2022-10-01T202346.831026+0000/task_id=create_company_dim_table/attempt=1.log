@@ -1,0 +1,33 @@
+[2022-10-01 20:25:00,064] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: main_dag.create_company_dim_table manual__2022-10-01T20:23:46.831026+00:00 [queued]>
+[2022-10-01 20:25:00,087] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: main_dag.create_company_dim_table manual__2022-10-01T20:23:46.831026+00:00 [queued]>
+[2022-10-01 20:25:00,089] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-01 20:25:00,089] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-10-01 20:25:00,090] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-01 20:25:00,120] {taskinstance.py:1377} INFO - Executing <Task(PostgresOperator): create_company_dim_table> on 2022-10-01 20:23:46.831026+00:00
+[2022-10-01 20:25:00,126] {standard_task_runner.py:52} INFO - Started process 1740 to run task
+[2022-10-01 20:25:00,130] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'main_dag', 'create_company_dim_table', 'manual__2022-10-01T20:23:46.831026+00:00', '--job-id', '91', '--raw', '--subdir', 'DAGS_FOLDER/main_dag.py', '--cfg-path', '/tmp/tmpx2krltds', '--error-file', '/tmp/tmpsv6tdj9d']
+[2022-10-01 20:25:00,133] {standard_task_runner.py:80} INFO - Job 91: Subtask create_company_dim_table
+[2022-10-01 20:25:00,223] {task_command.py:369} INFO - Running <TaskInstance: main_dag.create_company_dim_table manual__2022-10-01T20:23:46.831026+00:00 [running]> on host cb37a969dddb
+[2022-10-01 20:25:00,345] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=main_dag
+AIRFLOW_CTX_TASK_ID=create_company_dim_table
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-01T20:23:46.831026+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-10-01T20:23:46.831026+00:00
+[2022-10-01 20:25:00,357] {base.py:68} INFO - Using connection ID 'postgres' for task execution.
+[2022-10-01 20:25:00,364] {dbapi.py:208} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS company_dim_table (
+                Company_Full_Name TEXT NOT NULL,
+                Shariah TEXT NOT NULL,
+                Sector TEXT NOT NULL,
+                Company_Key TEXT NOT NULL
+            );
+        , parameters: None
+[2022-10-01 20:25:00,367] {postgres.py:94} INFO - NOTICE:  relation "company_dim_table" already exists, skipping
+
+[2022-10-01 20:25:00,390] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=main_dag, task_id=create_company_dim_table, execution_date=20221001T202346, start_date=20221001T202500, end_date=20221001T202500
+[2022-10-01 20:25:00,430] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-10-01 20:25:00,509] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

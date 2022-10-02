@@ -1,0 +1,40 @@
+[2022-10-01 19:56:36,123] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: main_dag.store_company_dim_table manual__2022-10-01T19:55:06.976033+00:00 [queued]>
+[2022-10-01 19:56:36,136] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: main_dag.store_company_dim_table manual__2022-10-01T19:55:06.976033+00:00 [queued]>
+[2022-10-01 19:56:36,137] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-01 19:56:36,138] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-10-01 19:56:36,138] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-01 19:56:36,161] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): store_company_dim_table> on 2022-10-01 19:55:06.976033+00:00
+[2022-10-01 19:56:36,175] {standard_task_runner.py:52} INFO - Started process 756 to run task
+[2022-10-01 19:56:36,185] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'main_dag', 'store_company_dim_table', 'manual__2022-10-01T19:55:06.976033+00:00', '--job-id', '71', '--raw', '--subdir', 'DAGS_FOLDER/main_dag.py', '--cfg-path', '/tmp/tmpnhz5vf42', '--error-file', '/tmp/tmpqq1rf67x']
+[2022-10-01 19:56:36,188] {standard_task_runner.py:80} INFO - Job 71: Subtask store_company_dim_table
+[2022-10-01 19:56:36,296] {task_command.py:369} INFO - Running <TaskInstance: main_dag.store_company_dim_table manual__2022-10-01T19:55:06.976033+00:00 [running]> on host cb37a969dddb
+[2022-10-01 19:56:36,548] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=main_dag
+AIRFLOW_CTX_TASK_ID=store_company_dim_table
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-01T19:55:06.976033+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-10-01T19:55:06.976033+00:00
+[2022-10-01 19:56:36,550] {postgres.py:127} INFO - Running copy expert: COPY company_dim_table FROM stdin WITH DELIMITER as ',' CSV HEADER, filename: df_company_dim_table.csv
+[2022-10-01 19:56:36,564] {base.py:68} INFO - Using connection ID 'postgres' for task execution.
+[2022-10-01 19:56:36,571] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/main_dag.py", line 28, in store_company_dim_table
+    filename = 'df_company_dim_table.csv'
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/postgres/hooks/postgres.py", line 135, in copy_expert
+    cur.copy_expert(sql, file)
+psycopg2.errors.BadCopyFileFormat: missing data for column "company_key"
+CONTEXT:  COPY company_dim_table, line 2: "LEAPONETECH SOLUTIONS HOLDINGS BERHAD,No,Software,2623"
+
+[2022-10-01 19:56:36,589] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=main_dag, task_id=store_company_dim_table, execution_date=20221001T195506, start_date=20221001T195636, end_date=20221001T195636
+[2022-10-01 19:56:36,610] {standard_task_runner.py:97} ERROR - Failed to execute job 71 for task store_company_dim_table (missing data for column "company_key"
+CONTEXT:  COPY company_dim_table, line 2: "LEAPONETECH SOLUTIONS HOLDINGS BERHAD,No,Software,2623"
+; 756)
+[2022-10-01 19:56:36,631] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-10-01 19:56:36,706] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
