@@ -1,4 +1,0 @@
-#Copy file into local machine
-#Run docker-compose up -d in terminal to build project
-#Run pipeline on airflow web server
-#type main() at end of code in web_scraping.py to see output of webscraping when debuggin in terminal
